@@ -25,5 +25,17 @@ def print_board(grid):
             print(l, end=" ")
         print()  # then this will create a new line to imitate a grid
 
+def empty(grid):
+   # for i in range(len(grid[0])):
+        #for j in range(len(grid[0])):
+
+    for i in range(0, 81): # check each cell in order from left to right
+        row = i//9
+        col = i%9
+        if grid[row][col] == 0:
+            return (row,col)
+                
+    return None #if no blank squares, end the backtracking loop 
+
 if __name__ == "__main__":
     print_board(board)
